@@ -19,6 +19,14 @@ Expert guidance for AB Tasty's two main platforms:
 
 **Entrypoint:** [SKILL.md](SKILL.md)
 
+## Dependencies
+
+Install required npm packages globally before using the codebase analysis features:
+
+```bash
+npm install -g @abtasty/codebase-analyzer-typescript
+```
+
 ## Repository Structure
 
 ```
@@ -27,6 +35,7 @@ skills/
 ├── README.md                       # This file
 ├── LICENSE.txt
 ├── references/                     # Detailed reference documents
+│   ├── codebase-analyzer.md        # Codebase analyzer for feature flag detection
 │   ├── decision-api.md             # Runtime feature flag retrieval (Decision API)
 │   ├── resource-loader.md          # Campaign configuration loader
 │   ├── fear-resource-extractor.md  # Feature Experimentation campaign generator
@@ -42,6 +51,7 @@ skills/
 │   ├── ios-sdk.md                  # iOS SDK installation
 │   └── flutter-sdk.md              # Flutter SDK installation
 └── scripts/
+    ├── analyze-codebase.js         # Working example for the Codebase Analyzer
     └── call-decision-api.js        # Working example for the Decision API
 ```
 
@@ -62,6 +72,14 @@ skills/
 | [ios-sdk.md](references/ios-sdk.md)         | Feature Experimentation | iOS (Swift / Obj-C)     |
 | [flutter-sdk.md](references/flutter-sdk.md) | Feature Experimentation | Flutter / Dart          |
 
+### Codebase Analysis
+
+| File                                                    | Description                                                                                                   |
+| ------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| [codebase-analyzer.md](references/codebase-analyzer.md) | Scan a codebase for AB Tasty and competitor feature flags (LaunchDarkly, OpenFeature, Optimizely, Split, VWO) |
+
+**npm package:** `@abtasty/codebase-analyzer-typescript` — install globally: `npm install -g @abtasty/codebase-analyzer-typescript`
+
 ### APIs & Tooling
 
 | File                                                                | Description                                                             |
@@ -72,6 +90,12 @@ skills/
 | [we-resource-extractor.md](references/we-resource-extractor.md)     | Generate Web Experimentation campaign configs from natural language     |
 
 ## Common Workflows
+
+**Analyze a codebase for feature flags**
+
+1. Install the package: `npm install -g @abtasty/codebase-analyzer-typescript`
+2. See [codebase-analyzer.md](references/codebase-analyzer.md) for configuration and supported platforms
+3. Run `node scripts/analyze-codebase.js ./src` (or `--platform launchdarkly` for competitor detection)
 
 **Install SDK and retrieve feature flags**
 
