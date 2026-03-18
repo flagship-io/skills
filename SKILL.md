@@ -1,6 +1,6 @@
 ---
 name: abtasty
-description: AB Tasty Feature Experimentation & Web Experimentation platform integration. Use this skill when working with AB Tasty feature flags, campaigns, A/B tests, SDK installation, visitor targeting, decision APIs, or campaign configuration for both Feature Experimentation (server-side) and Web Experimentation (client-side). This skill provides tools for retrieving campaigns and flags, installing SDKs, and generating campaign configurations from natural language briefs.
+description: AB Tasty Feature Experimentation & Web Experimentation platform integration. Use this skill when working with AB Tasty feature flags, campaigns, A/B tests, SDK installation, visitor targeting, decision APIs, campaign configuration, or codebase analysis for feature flag detection. This skill provides tools for retrieving campaigns and flags, installing SDKs, generating campaign configurations from natural language briefs, and analyzing codebases to detect feature flag usage across multiple platforms (AB Tasty, LaunchDarkly, OpenFeature, Optimizely, Split, VWO).
 ---
 
 # AB Tasty Integration
@@ -16,9 +16,25 @@ AB Tasty provides two main platforms:
 
 This skill helps with SDK installation, decision API integration, and campaign configuration for both platforms.
 
+## Dependencies
+
+Install the required npm packages globally before using the codebase analysis features:
+
+```bash
+npm install -g @abtasty/codebase-analyzer-typescript
+```
+
 ## Quick Navigation
 
 Choose the appropriate guide based on your task:
+
+### Codebase Analysis
+
+**Scanning a codebase for feature flag usage:**
+
+- Detect AB Tasty / Flagship SDK flags across all supported languages → See [codebase-analyzer.md](references/codebase-analyzer.md)
+- Detect competitor platform flags (LaunchDarkly, OpenFeature, Optimizely, Split, VWO) → See [codebase-analyzer.md](references/codebase-analyzer.md)
+- Use custom regex patterns for proprietary flag systems → See [codebase-analyzer.md](references/codebase-analyzer.md)
 
 ### SDK Installation & Integration
 
@@ -49,6 +65,10 @@ _Client-side / Mobile:_
 - Activate campaigns or send analytics hits → See [decision-api.md](references/decision-api.md)
 - Complete working example → Run `scripts/call-decision-api.js`
 
+**Codebase Analysis:**
+
+- Complete working example → Run `scripts/analyze-codebase.js`
+
 ### Campaign Configuration (Setup)
 
 **Creating or configuring campaigns:**
@@ -75,7 +95,13 @@ _Client-side / Mobile:_
 1. Generate campaign config using [fear-resource-extractor.md](references/fear-resource-extractor.md) or [we-resource-extractor.md](references/we-resource-extractor.md)
 2. Load resources using [resource-loader.md](references/resource-loader.md)
 
-### Workflow 3: Test Existing Campaign
+### Workflow 3: Analyze Codebase for Feature Flags
+
+1. Use the codebase analyzer to scan for flags with [codebase-analyzer.md](references/codebase-analyzer.md)
+2. Optionally scan for competitor platform flags (LaunchDarkly, Split, etc.)
+3. Review detected flags and compare with platform configuration
+
+### Workflow 4: Test Existing Campaign
 
 1. Get campaign details using [decision-api.md](references/decision-api.md)
 2. Verify targeting and variations
@@ -104,6 +130,10 @@ _For Web Experimentation:_
 - API Token (`we_token`)
 
 ## Reference Files
+
+_Codebase Analysis:_
+
+- [codebase-analyzer.md](references/codebase-analyzer.md) - Codebase analyzer for detecting feature flag usage across platforms
 
 _APIs & Tooling:_
 
@@ -136,4 +166,6 @@ Use this skill when the user asks about:
 - Configuring campaign variations and allocations
 - Generating campaign configurations from requirements
 - Tracking analytics hits or activating campaigns
+- Scanning or analyzing a codebase for feature flag usage
+- Detecting competitor feature flag platforms (LaunchDarkly, OpenFeature, Optimizely, Split, VWO)
 - AB Tasty Feature Experimentation, Flagship, or Web Experimentation platforms
