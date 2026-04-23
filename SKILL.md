@@ -82,6 +82,7 @@ _Client-side / Mobile:_
 
 - Create A/B tests, variations, modifications from description → See [we-resource-extractor.md](references/we-resource-extractor.md)
 - Load web campaign configurations → See [resource-loader.md](references/resource-loader.md)
+- Manage existing campaigns (status transitions, traffic changes, QA mode, metrics) → See [we-management-api.md](references/we-management-api.md)
 
 ## Common Workflows
 
@@ -141,6 +142,7 @@ _APIs & Tooling:_
 - [resource-loader.md](references/resource-loader.md) - Resource Loader API for campaign configuration
 - [fear-resource-extractor.md](references/fear-resource-extractor.md) - Feature Experimentation campaign generator
 - [we-resource-extractor.md](references/we-resource-extractor.md) - Web Experimentation campaign generator
+- [we-management-api.md](references/we-management-api.md) - Web Experimentation management API (status, traffic, QA, metrics)
 
 _SDKs:_
 
